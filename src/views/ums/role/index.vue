@@ -4,25 +4,23 @@
       <div>
         <i class="el-icon-search"></i>
         <span>筛选搜索</span>
-        <el-button
-          style="float:right"
-          type="primary"
-          @click="handleSearchList()"
-          size="small">
-          查询搜索
-        </el-button>
-        <el-button
-          style="float:right;margin-right: 15px"
-          @click="handleResetSearch()"
-          size="small">
-          重置
-        </el-button>
       </div>
       <div style="margin-top: 15px">
         <el-form :inline="true" :model="listQuery" size="small" label-width="140px">
           <el-form-item label="输入搜索：">
             <el-input v-model="listQuery.keyword" class="input-width" placeholder="角色名称" clearable></el-input>
           </el-form-item>
+          <el-button
+              type="primary"
+              @click="handleSearchList()"
+              size="small">
+              查询搜索
+            </el-button>
+            <el-button
+              @click="handleResetSearch()"
+              size="small">
+              重置
+            </el-button>
         </el-form>
       </div>
     </el-card>
