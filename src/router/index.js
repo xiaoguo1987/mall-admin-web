@@ -186,53 +186,35 @@ export const asyncRouterMap = [
   {
     path: '/oilwell',
     component: Layout,
-    redirect: '/oilwell/pressure/underground',
-    name: 'oms',
-    meta: {title: '油井', icon: 'order'},
+    redirect: '/oilwell/pressureUnderground',
+    name: 'oilwell',
+    meta: {title: '油井', icon: 'product'},
     children: [
       {
-        path: 'oilwell',
-        name: 'oilwell',
-        component: () => import('@/views/oilwell/pressure/underground'),
-        meta: {title: '订单列表', icon: 'product-list'}
+        path: 'pressureUnderground',
+        name: 'pressureUnderground',
+        component: () => import('@/views/oilwell/pressureUnderground'),
+        meta: {title: '地层压力变化', icon: 'product-list'}
       },
       {
-        path: 'orderDetail',
-        name: 'orderDetail',
-        component: () => import('@/views/oms/order/orderDetail'),
-        meta: {title: '订单详情'},
+        path: 'pressureFlow',
+        name: 'pressureFlow',
+        component: () => import('@/views/oilwell/pressureFlow'),
+        meta: {title: '流动压力变化'},
         hidden:true
       },
       {
-        path: 'deliverOrderList',
-        name: 'deliverOrderList',
-        component: () => import('@/views/oms/order/deliverOrderList'),
-        meta: {title: '发货列表'},
+        path: 'watery',
+        name: 'watery',
+        component: () => import('@/views/oilwell/watery'),
+        meta: {title: '含水变化'},
         hidden:true
       },
       {
-        path: 'orderSetting',
-        name: 'orderSetting',
-        component: () => import('@/views/oms/order/setting'),
-        meta: {title: '订单设置', icon: 'order-setting'}
-      },
-      {
-        path: 'returnApply',
-        name: 'returnApply',
-        component: () => import('@/views/oms/apply/index'),
-        meta: {title: '退货申请处理', icon: 'order-return'}
-      },
-      {
-        path: 'returnReason',
-        name: 'returnReason',
-        component: () => import('@/views/oms/apply/reason'),
-        meta: {title: '退货原因设置', icon: 'order-return-reason'}
-      },
-      {
-        path: 'returnApplyDetail',
-        name: 'returnApplyDetail',
-        component: () => import('@/views/oms/apply/applyDetail'),
-        meta: {title: '退货原因详情'},
+        path: 'production',
+        name: 'production',
+        component: () => import('@/views/oilwell/production'),
+        meta: {title: '产油变化', icon: 'order-setting'},
         hidden:true
       }
     ]
